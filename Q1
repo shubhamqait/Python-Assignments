@@ -1,0 +1,24 @@
+Q1) Explain:
+a. The negative index in Python
+b. How can you generate random numbers in Python?
+c. The use of // operator in Python
+d. The iterators, decorators, and generators in Python
+e. The difference between list and tuple
+
+Sol:-
+a) The negative index in python is used for indexing last element as -1 and second last element as -2 and so on. This is useful when you don’t know the last index value and you want to access without calculating the length of arrays(list,tuple,set,dict) in python.
+
+b) This is possible by using the predefined function which is random.randrange(starting number,end number) and import the library random.
+
+c) // this is called floor division method operator and it is used to give result nearest to whole number.
+
+d) Iterators-Iterator in python is any python type that can be used with a ‘for in loop’. Python lists, tuples, dicts and sets are all examples of inbuilt iterators.
+
+Decorators-A decorator is a design pattern in Python that allows a user to add new functionality to an existing object without modifying its structure. Decorators are usually called before the definition of a function you want to decorate.
+
+Generators- it include two terms function and object:
+  1)Generators Function-A generator-function is defined like a normal function, but whenever it needs to generate a value, it does so with the yield keyword rather than return. If the body of a def contains yield, the function automatically becomes a generator function.
+  2)Generator Object-Generator functions return a generator object. Generator objects are used either by calling the next method on the generator object or using the generator object in a “for in” loop.
+
+e) The main difference between lists and a tuples is the fact that lists are mutable whereas tuples are immutable.
+
