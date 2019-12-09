@@ -1,0 +1,14 @@
+Q9 What will be the output of the following Python code?
+	def foo(x):
+		x[0] = ['def']
+		x[1] = ['abc']
+		return id(x)
+	q = ['abc', 'def']
+	print(id(q) == foo(q))
+Sol:-  Output is True.
+
+Q10 What will be the output of the following Python code and explain how?
+	['true', 'false'][bool('SPAM')]
+  Sol:-  Output is ‘false’ because in [bool(‘SPAM’)] it gives true which means 1. So in this [‘true’,’false’] bool(‘SPAM’) function take index 1 value which is ‘false’. 
+
+
