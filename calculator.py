@@ -1,5 +1,6 @@
 my_list = []
 def run_calculator():
+    #ankitksr: Try using boolean flag instead. 
     i = int(input("Press '1' For use calculator again else press '0' for Exit ->"))
     if bool(i):
         run_again()
