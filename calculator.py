@@ -1,32 +1,34 @@
+my_list = []
 def run_calculator():
     i = int(input("Press '1' For use calculator again else press '0' for Exit ->"))
-    if i == 1:
+    if bool(i):
         run_again()
-    elif i == 0:
+    else:
         exit()
 
-my_list = []
-def enter():
-    try: 
-        print("\n")
-        print("Note: You Enter Unlimited Numbers But After entering all numbers type 'stop' for result")
-        print("Enter first number")
-        while True: 
-            my_list.append(int(input())) 
-            print("Enter another number")
-            
-    except: 
-        pass
 
-def add(func):
+def add():
+    a = 0
+    for i in my_list:
+        a = a + i
+    print("\n\n")
+    print("Ans= "+str(a))
+    print("\n\n")
+
+def enter(func):
     def wrap():
-        func()
-        a = 0
-        for i in my_list:
-            a = a + i
-        print("\n\n")
-        print("Ans= "+str(a))
-        print("\n\n")
+        try: 
+            print("\n")
+            print("Note: You Enter Unlimited Numbers But After entering all numbers type 'stop' for result")
+            print("Enter first number")
+            while True: 
+                my_list.append(int(input())) 
+                print("Enter another number")
+            
+        except: 
+            pass
+
+        func()   
     return wrap 
 
 
@@ -39,7 +41,7 @@ def run_again():
         print("Press 5 for Exit")
         i = int(input("Enter your Choice"))
         if i == 1: 
-            sum = add(enter)
+            sum = enter(add)
             sum()
             run_calculator()
         elif i == 2:
