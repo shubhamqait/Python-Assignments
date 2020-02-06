@@ -28,4 +28,3 @@ for x in range(d):
             destinationdata=directory+"/"+str(x)
             shutil.move(sourcedata,destinationdata)
             y=y+1
-
