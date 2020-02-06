@@ -1,30 +1,31 @@
 import os
 import shutil
-entries = os.listdir('/home/shubham/Desktop/Folder')
-filescreate=int(input("Enter how many files you want to create"))
-for i in range(filescreate):
-    f=open(str(i)+".txt","w+")
+directory=os.path.dirname(os.path.realpath(__file__))
+files=[]
+files = os.listdir(directory)
+length_of_files = len(files)
+print("Total No. of files"+str(length_of_files))
+source = directory
 
-for entry in entries:
-    print(entry)
-filedir=int(input("Enter how many files you want to move in group"))
-d=int(filescreate/filedir)
-if a%filedir==0:
+filedir = int(input("Enter how many files you want to move in group"))
+d= int(length_of_files/filedir)
+if length_of_files%filedir == 0:
     pass
 else:
-    d=d+1
+    d = d+1
 for j in range(d):
-    os.chdir("/home/shubham/Desktop/Folder")
+    os.chdir(directory)
     if os.path.isdir(str(j)):
         pass
     else:
         os.mkdir(str(j))
-e=filedir
-y=0
+e = filedir
+y = 0
 for x in range(d):
     for i in range(filedir):
-        if y<filescreate: 
-            source="/home/shubham/Desktop/Folder"+"/"+str(e*x+i)+".txt"
-            destination="/home/shubham/Desktop/Folder/"+str(x)
-            shutil.move(source,destination)
+        if y<length_of_files:
+            sourcedata=directory+'/'+files[e*x+i]
+            destinationdata=directory+"/"+str(x)
+            shutil.move(sourcedata,destinationdata)
             y=y+1
+
