@@ -5,10 +5,12 @@ files=[]
 files = os.listdir(directory)
 length_of_files = len(files)
 print("Total No. of files"+str(length_of_files))
+# ankitksr: What is the purpose of reassigning the variable?
 source = directory
 
 filedir = int(input("Enter how many files you want to move in group"))
 d= int(length_of_files/filedir)
+# Wrap this if-else block using Python's single line conditional
 if length_of_files%filedir == 0:
     pass
 else:
