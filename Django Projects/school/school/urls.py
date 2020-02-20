@@ -19,4 +19,5 @@ from students import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.registration, name='registration'),
+    path('registrationdata', views.registrationdata, name='registrationdata'),
 ]
