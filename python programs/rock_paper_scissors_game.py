@@ -1,3 +1,8 @@
+print('''Please pick one:
+            rock
+            scissors
+            paper''')
+
 while True:
     game_dict = {'rock': 1, 'scissors': 2, 'paper': 3}
     player_a = str(input("Player a: "))
