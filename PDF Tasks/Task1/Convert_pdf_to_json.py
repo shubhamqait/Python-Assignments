@@ -25,7 +25,7 @@ def pdf_to_json_data():
     # for making document.fieldcount field in dictionary dict1
     dict1["document.fieldcount"] =  count
     main_data = {"map":coercion.normalize_collection(dict1)}
-    # for encoding dictionary data to JSON objects
+    # for encoding dictionary data to JSON data
     json_data = json.dumps(main_data)
     return json_data
 
