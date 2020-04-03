@@ -4,8 +4,8 @@ from pdfminer.pdfparser import PDFParser
 from pdfminer.pdfdocument import PDFDocument
 from pdfminer.pdftypes import resolve1
 
-def pdf_to_json_data():
-    parser = PDFParser(open('Enrollment_Form_filled.pdf', 'rb'))
+def pdf_to_json_data(file_name):
+    parser = PDFParser(open(file_name, 'rb'))
     doc = PDFDocument(parser)
     data = resolve1(doc.catalog['AcroForm'], default=None)['Fields']
     
@@ -29,4 +29,5 @@ def pdf_to_json_data():
     json_data = json.dumps(main_data)
     return json_data
 
-print(pdf_to_json_data())
+file_name = input("Enter pdf file name with extension .pdf: ")
+print(pdf_to_json_data(file_name))
