@@ -3,7 +3,8 @@ from django.db import models
 class RegistrationForm(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
-    date_of_birth = models.DateField()
+    age = models.IntegerField(max_length=3)
+    date_of_birth = models.DateField(blank=True, null=True)
     GENDER_CHOICES = (
         ('M', 'Male'),
         ('F', 'Female'),

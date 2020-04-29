@@ -20,7 +20,8 @@ from students import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.registration),
-    path('show',views.show),
+    path('show/',views.show),
+    path('success',views.success),
     path('edit/<int:id>', views.edit),
     path('update/<int:id>', views.update),  
     path('delete/<int:id>', views.destroy),
