@@ -3,7 +3,7 @@
 <head>  
     <meta charset="UTF-8">  
     <title>Student Records</title>  
-     {% load staticfiles %}  
+     {% load static %}  
     <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
     <style>
         table, th, td{
@@ -53,6 +53,8 @@
         <th>Father Name</th>
         <th>Mother Name</th>  
         <th>Address</th>
+        <th>Date of Take Admission</th>
+        <th>Last Modified in Form</th>
     </tr>  
     </thead>  
     <tbody>  
@@ -65,9 +67,13 @@
         <td>{{ student.gender }}</td>
         <td>{{ student.father_name }}</td>
         <td>{{ student.mother_name }}</td>
-        <td>{{ student.address }}</td>  
+        <td>{{ student.address }}</td>
+        <td>{{ student.registration_date }}</td>
+        <td>{{ student.last_modified }}</td> 
         <td>  
             <button class="button button4" style=" background:#00FF57;"><a href="/edit/{{ student.id }}"><span class="glyphicon glyphicon-pencil" >Edit</span></a></button>  
+        </td>    
+        <td>
             <button class="button button4" style="background:#FF0000;"><a href="/delete/{{ student.id }}">Delete</a></button>  
         </td>  
     </tr>  

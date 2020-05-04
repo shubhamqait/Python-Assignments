@@ -17,6 +17,10 @@ from django.contrib import admin
 from django.urls import path
 from students import views
 
+admin.site.site_header = "Admin Dashboard"
+admin.site.site_title = "Admin Dashboard"
+admin.site.index_title = "School Administration"
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.registration),
