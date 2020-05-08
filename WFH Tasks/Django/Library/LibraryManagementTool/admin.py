@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.admin import AdminSite
 
 # Register your models here.
 from .models import Books
@@ -17,5 +18,12 @@ class BooksAdmin(admin.ModelAdmin):
     def Stock_Sold(self, request, queryset):
             count = queryset.update(quantity = 0)
             count = queryset.update(available = False)
-        
+
+class MyAdminSite(AdminSite):
+    pass
+
+user_site = MyAdminSite(name='mysite')
+
+user_site.register(Books, BooksAdmin)
 admin.site.register(Books, BooksAdmin)
+
