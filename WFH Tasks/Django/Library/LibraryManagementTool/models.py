@@ -1,5 +1,5 @@
 from django.db import models
-from django.db.models.signals import post_save
+from django.db.models.signals import pre_save
 from django.dispatch import receiver
 
 # Create your models here.
@@ -24,9 +24,9 @@ class Author(models.Model):
     def __str__(self):
         return self.name
 
-@receiver(post_save, sender=Books)
-def my_callback(sender, created, **kwargs):
-    if not created:
+@receiver(pre_save, sender=Books)
+def my_callback(sender, **kwargs):
+    if sender.quantity == 0 :
         sender.available = False
     else:
         sender.available = True
