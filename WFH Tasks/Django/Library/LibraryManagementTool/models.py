@@ -4,11 +4,11 @@ from django.dispatch import receiver
 
 # Create your models here.
 class Books(models.Model):
-    isbn = models.IntegerField(max_length=13, unique=True)
+    isbn = models.PositiveIntegerField(unique=True)
     title = models.CharField(max_length=255)
-    author = models.ForeignKey("LibraryManagementTool.Author", on_delete=models.CASCADE)
+    author = models.ForeignKey("Author", on_delete=models.CASCADE)
     genere = models.CharField(max_length=30)
-    quantity = models.IntegerField(max_length=6, default=0)
+    quantity = models.PositiveIntegerField(default=0)
     available = models.BooleanField()
 
 
@@ -25,8 +25,8 @@ class Author(models.Model):
         return self.name
 
 @receiver(pre_save, sender=Books)
-def my_callback(sender, **kwargs):
-    if sender.quantity == 0 :
-        sender.available = False
+def my_callback(sender, instance, **kwargs):
+    if instance.quantity == 0 :
+        instance.available = False
     else:
-        sender.available = True
+        instance.available = True

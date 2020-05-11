@@ -16,22 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.contrib.auth.models import User, Group
-from django.contrib.admin.models import LogEntry
 from LibraryManagementTool.admin import user_site
+from LibraryManagementTool import views
 
-user_site.register(User)
-user_site.register(Group)
-admin.site.site_header = 'Library Management Portal'
-admin.site.site_title = "Library"
-admin.site.index_title = "Library"
-user_site.site_header = 'Library Management Portal'
-user_site.site_title = "Library"
-user_site.index_title = "Library"
-LogEntry.objects.all().delete()
+
 admin.site.unregister(User)
 admin.site.unregister(Group)
 
 urlpatterns = [
-    path('', admin.site.urls),
+    path('myadmin', admin.site.urls),
     path('myuser',user_site.urls),
+    path('', views.index, name='index'),
 ]
