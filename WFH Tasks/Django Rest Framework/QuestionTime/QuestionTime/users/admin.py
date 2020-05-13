@@ -4,7 +4,7 @@ from users.models import CustomUser
 
 
 class CustomUserAdmin(UserAdmin):
-    #add_for = 
+    #add_form = 
     #form = 
     model = CustomUser
     list_display = ["username", "email", "is_staff"]
